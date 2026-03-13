@@ -1,0 +1,21 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from time import sleep
+opts = webdriver.ChromeOptions()
+opts.add_experimental_option('detach',True)
+# opts.add_argument('--headless')
+driver=webdriver.Chrome(options=opts)
+driver.get('https://testautomationpractice.blogspot.com/')
+sleep(5)
+print("It's working")
+name=driver.find_element(By.ID,'name')
+phone=driver.find_element(By.ID,'phone')
+Nav=driver.find_element(By.NAME,'Navbar')
+radio_class=driver.find_elements(By.CLASS_NAME,'form-check-input')
+inp=driver.find_elements(By.TAG_NAME,'input')
+print(name)
+print(phone)
+print(radio_class)
+print(len(radio_class))
+print(len(inp))
+print('name and phone textfield found')
