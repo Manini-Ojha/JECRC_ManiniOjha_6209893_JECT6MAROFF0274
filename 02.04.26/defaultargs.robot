@@ -1,0 +1,13 @@
+*** Settings ***
+Library  SeleniumLibrary
+*** Variables ***
+${url}  https://sauce-demo.myshopify.com/account/login
+*** Test Cases ***
+Login
+    Open Browser  ${url}  chrome
+    Login Success  cheeseburger@gmail.com  iamironman
+*** Keywords ***
+Login Success
+    [Arguments]  ${email}  ${pwd}=iamironman
+    Input Text    id=customer_email    ${email}
+    Input Text    id=customer_password    ${pwd}
